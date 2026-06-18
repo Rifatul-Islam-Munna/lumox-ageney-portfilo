@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import {
   Aperture,
   ArrowLeft,
-  ArrowRight,
   Camera,
   Film,
   Mail,
@@ -14,6 +13,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { PhotographerSlider } from "@/components/photographer-slider";
 import type { BlogContent, HomeContent } from "@/lib/cms-types";
 import { defaultBlogContent } from "@/lib/blog-defaults";
 import { defaultHomeContent } from "@/lib/home-defaults";
@@ -421,49 +421,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-16 text-black sm:py-24 md:py-28" id="photographers">
-        <div className="flex flex-col gap-6 px-5 pb-12 sm:px-12 sm:pb-20 md:flex-row md:items-start md:justify-between lg:px-[70px]">
-          <div>
-            <h2 className="text-[22px] font-black uppercase tracking-[0.08em] text-[#3a3a3d] sm:text-[26px] sm:tracking-[0.12em]">
-              {copy.photographersTitle}
-            </h2>
-            <p className="mt-5 inline-block bg-[#ffd018] px-3 py-2 text-[11px] font-medium uppercase tracking-[0.12em] sm:text-[14px] sm:tracking-[0.16em]">
-              {copy.photographersSubtitle}
-            </p>
-          </div>
-          <div className="hidden gap-4 pt-8 md:flex">
-            <button aria-label="Previous photographer">
-              <ArrowLeft className="h-6 w-6 stroke-[2.5]" />
-            </button>
-            <button aria-label="Next photographer">
-              <ArrowRight className="h-6 w-6 stroke-[2.5]" />
-            </button>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {content.photographers.map((person) => (
-            <article className="group relative h-[360px] overflow-hidden sm:h-[430px] md:h-[580px]" key={person.name}>
-              <img
-                alt={person.name}
-                className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105"
-                src={person.image}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/15 to-transparent" />
-              <div className="absolute bottom-12 left-0 right-0 text-center text-white">
-                <h3 className="text-[16px] font-black uppercase tracking-[0.12em] sm:text-[20px]">
-                  {person.name}
-                </h3>
-                <div className="mt-5 flex justify-center gap-5 text-[24px] font-black">
-                  <a href="#" aria-label={`${person.name} Facebook`}>f</a>
-                  <a href="#" aria-label={`${person.name} LinkedIn`}>in</a>
-                  <a href="#" aria-label={`${person.name} Twitter`}>t</a>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <PhotographerSlider
+        eyebrow={copy.photographersSubtitle}
+        people={content.photographers}
+        title={copy.photographersTitle}
+      />
 
       <section className="bg-white px-5 py-16 text-black sm:px-12 sm:py-24 md:py-28">
         <div className="text-center">

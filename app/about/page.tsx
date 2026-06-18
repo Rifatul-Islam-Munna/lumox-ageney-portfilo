@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Aperture, Camera, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
+import { PhotographerSlider } from "@/components/photographer-slider";
 import { SeoJsonLd } from "@/components/seo-json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { defaultAboutContent } from "@/lib/about-defaults";
@@ -138,38 +139,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white pt-8 text-black" id="photographers">
-        <div className="mx-auto max-w-[1100px] pb-12 text-center">
-          <h2 className="text-[18px] font-black uppercase tracking-[0.12em]">
-            Meet photographers
-          </h2>
-          <p className="mt-3 inline-block bg-[#ffd018] px-3 py-2 text-[11px] font-black uppercase tracking-[0.1em]">
-            We are a team of super professional photographers
-          </p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4">
-          {content.photographers.map((person) => (
-            <article className="relative h-[430px] overflow-hidden" key={person.name}>
-              <img
-                alt={person.name}
-                className="h-full w-full object-cover grayscale"
-                src={person.image}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
-              <div className="absolute bottom-10 left-0 right-0 text-center text-white">
-                <h3 className="text-[14px] font-black uppercase tracking-[0.14em]">
-                  {person.name}
-                </h3>
-                <div className="mt-4 flex justify-center gap-4 text-[18px] font-black">
-                  <a href="#" aria-label={`${person.name} Facebook`}>f</a>
-                  <a href="#" aria-label={`${person.name} LinkedIn`}>in</a>
-                  <a href="#" aria-label={`${person.name} Twitter`}>t</a>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <PhotographerSlider people={content.photographers} />
 
       <SiteFooter />
     </main>

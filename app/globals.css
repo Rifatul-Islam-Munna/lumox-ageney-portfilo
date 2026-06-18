@@ -129,13 +129,35 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
   }
 }
 
 @layer utilities {
+  main {
+    animation: page-soft-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  main h1,
+  main h2,
+  main h3,
+  main p,
+  main blockquote {
+    animation: text-lift 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 18%;
+  }
+
   main > section,
   .motion-section {
-    animation: section-rise 0.7s ease both;
+    animation: section-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
     animation-timeline: view();
     animation-range: entry 0% cover 22%;
   }
@@ -146,11 +168,12 @@
       transform 280ms ease,
       box-shadow 280ms ease,
       filter 280ms ease;
+    will-change: transform;
   }
 
   article:hover,
   .motion-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
   }
 
   img {
@@ -158,12 +181,42 @@
       transform 520ms ease,
       filter 520ms ease,
       opacity 520ms ease;
+    will-change: transform;
   }
 
   a:hover img,
   article:hover img {
-    transform: scale(1.045);
+    transform: scale(1.055);
     filter: saturate(1.08) contrast(1.04);
+  }
+
+  button,
+  a {
+    transition:
+      color 220ms ease,
+      background-color 220ms ease,
+      border-color 220ms ease,
+      transform 220ms ease,
+      opacity 220ms ease;
+  }
+
+  button:hover,
+  a:hover {
+    transform: translateY(-2px);
+  }
+
+  input,
+  textarea {
+    transition:
+      background-color 220ms ease,
+      box-shadow 220ms ease,
+      transform 220ms ease;
+  }
+
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 34%, transparent);
+    transform: translateY(-1px);
   }
 
   .nav-link {
@@ -197,13 +250,39 @@
   }
 }
 
+@keyframes page-soft-enter {
+  from {
+    opacity: 0.96;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes section-rise {
   from {
     opacity: 0.001;
+    filter: blur(10px);
     transform: translateY(32px);
   }
   to {
     opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes text-lift {
+  from {
+    opacity: 0.001;
+    filter: blur(8px);
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
     transform: translateY(0);
   }
 }
