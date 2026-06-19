@@ -1,9 +1,10 @@
 import type { SeoContent, SeoEntry } from "@/lib/cms-types";
 
 const defaults = {
-  keywords: "photography studio, production, portfolio, shooting booking",
+  keywords:
+    "Lumos Visuals, corporate photography, commercial video production, event photography, virtual tours, post-production",
   robots: "index, follow",
-  imageAltDefault: "Luumox photography studio image",
+  imageAltDefault: "Lumos Visuals commercial visual production image",
   structuredData: "",
 };
 
@@ -29,16 +30,47 @@ function entry(page: string, path: string, title: string, description: string, o
 }
 
 export const defaultSeoContent: SeoContent = {
-  siteName: "Luumox",
-  defaultTitle: "Luumox Photography Studio",
-  defaultDescription: "Photography, production, portfolio, and shooting booking studio.",
-  defaultOgImage: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=90",
+  siteName: "Lumos Visuals",
+  defaultTitle: "Lumos Visuals | Corporate & Commercial Visual Production",
+  defaultDescription:
+    "Photography, video production, 360-degree virtual tours, and creative post-production for brands, events, hospitality, architecture, and commercial spaces.",
+  defaultOgImage: "/uploads/site-images/conference-panel.jpg",
   entries: [
-    entry("Home", "/", "Luumox Photography Studio", "Full-service photography, production, and post-production studio."),
-    entry("About", "/about", "About Luumox", "Meet the studio, team, and creative production process."),
-    entry("Services", "/services", "Photography Services", "Book photography, production, and post-production services."),
-    entry("Portfolio", "/portfolio", "Photography Portfolio", "Explore photography, fashion, product, and architecture work."),
-    entry("Blog", "/blog", "Photography Blog", "Photography news, tips, gear, and studio stories."),
-    entry("Book", "/book", "Book for Shooting", "Contact Luumox to book your next photography shoot."),
+    entry(
+      "Home",
+      "/",
+      "Lumos Visuals | Corporate & Commercial Visual Production",
+      "Premium visual content for brands, events, and spaces.",
+    ),
+    entry(
+      "About",
+      "/about",
+      "About Lumos Visuals",
+      "Commercial visual production beyond photography.",
+    ),
+    entry(
+      "Services",
+      "/services",
+      "Visual Production Services",
+      "Photography, video production, virtual tours, and creative post-production services.",
+    ),
+    entry(
+      "Portfolio",
+      "/portfolio",
+      "Lumos Visuals Portfolio",
+      "Explore visual production work for brands, events, spaces, and commercial campaigns.",
+    ),
+    entry(
+      "Blog",
+      "/blog",
+      "Lumos Visuals Clients & Insights",
+      "Client-focused notes and visual production insights from Lumos Visuals.",
+    ),
+    entry(
+      "Book",
+      "/book",
+      "Request a Quote | Lumos Visuals",
+      "Contact Lumos Visuals to plan photography, video, virtual tour, or post-production work.",
+    ),
   ],
 };

@@ -1,23 +1,19 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Montserrat } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { PageMotion } from "@/components/page-motion";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-const montserrat = Montserrat({
+const playfairDisplay = Playfair_Display({
   variable: "--font-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "luumox",
-  description: "Creative photo studio and production portfolio.",
+  title: "Lumos Visuals",
+  description: "Corporate and commercial visual production.",
 };
 
 export default function RootLayout({
@@ -31,9 +27,8 @@ export default function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
-        geistMono.variable,
         "font-sans",
-        montserrat.variable,
+        playfairDisplay.variable,
       )}
     >
       <body className="min-h-full flex flex-col">

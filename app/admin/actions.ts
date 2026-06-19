@@ -3,8 +3,8 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { clearAdminSession, createAdminSession, isAdminAuthed, isValidAdmin } from "@/lib/admin-auth";
-import { getBlogContent, saveAboutContent, saveBlogContent, saveHomeContent, savePortfolioContent, saveSeoContent, saveServicesContent } from "@/lib/cms-store";
-import type { AboutContent, BlogContent, HomeContent, PortfolioContent, SeoContent, ServicesContent } from "@/lib/cms-types";
+import { getBlogContent, saveAboutContent, saveBlogContent, saveDynamicServicesContent, saveHomeContent, savePortfolioContent, saveSeoContent, saveServicesContent } from "@/lib/cms-store";
+import type { AboutContent, BlogContent, DynamicServiceContent, HomeContent, PortfolioContent, SeoContent, ServicesContent } from "@/lib/cms-types";
 import { defaultBlogContent } from "@/lib/blog-defaults";
 
 export async function loginAdmin(_prev: { error?: string } | undefined, formData: FormData) {
@@ -51,6 +51,19 @@ export async function saveServicesCms(content: ServicesContent) {
 
   await saveServicesContent(content);
   revalidatePath("/services");
+  return { ok: true };
+}
+
+export async function saveDynamicServicesCms(content: DynamicServiceContent) {
+  if (!(await isAdminAuthed())) {
+    throw new Error("Unauthorized");
+  }
+
+  await saveDynamicServicesContent(content);
+  revalidatePath("/services");
+  for (const service of content.services) {
+    revalidatePath(`/services/${service.slug}`);
+  }
   return { ok: true };
 }
 

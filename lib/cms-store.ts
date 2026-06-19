@@ -1,7 +1,7 @@
 import "server-only";
 
 import { MongoClient } from "mongodb";
-import type { AboutContent, BlogContent, HomeContent, PortfolioContent, SeoContent, ServicesContent } from "@/lib/cms-types";
+import type { AboutContent, BlogContent, DynamicServiceContent, HomeContent, PortfolioContent, SeoContent, ServicesContent } from "@/lib/cms-types";
 
 let clientPromise: Promise<MongoClient> | undefined;
 
@@ -42,6 +42,14 @@ export async function getServicesContent() {
 
 export async function saveServicesContent(content: ServicesContent) {
   return saveCmsContent("services", content);
+}
+
+export async function getDynamicServicesContent() {
+  return getCmsContent<DynamicServiceContent>("dynamic-services");
+}
+
+export async function saveDynamicServicesContent(content: DynamicServiceContent) {
+  return saveCmsContent("dynamic-services", content);
 }
 
 export async function getPortfolioContent() {

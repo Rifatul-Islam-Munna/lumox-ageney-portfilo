@@ -2,85 +2,82 @@ import type { AboutContent } from "@/lib/cms-types";
 
 export const defaultAboutContent: AboutContent = {
   hero: {
-    title: "About us",
-    sub: "Know Us Better",
+    title: "About Lumos Visuals",
+    sub: "Visual Production Beyond Photography",
     body: "",
     image:
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=2200&q=90",
+      "/uploads/site-images/conference-room.jpg",
   },
   intro: {
     image:
-      "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?auto=format&fit=crop&w=1200&q=90",
-    title:
-      "Founded in 2008 by professional photographer, John Smith. We product visual content service creative to post production.",
-    badge: "We are a team of professional photographers",
+      "/uploads/site-images/event-lobby.jpg",
+    title: "Commercial visual production for brands, businesses, hospitality, architecture, and events.",
+    badge: "Photography - Video Production - 360-degree Virtual Tours - Creative Post-Production",
     body:
-      "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts. Separated They Live In Bookmarksgrove Right At The Coast Of The Semantics, A Large Language Ocean.",
+      "Lumos Visuals is a commercial visual production studio specializing in photography, videography, immersive virtual experiences, and creative post-production. We create visual content that communicates value, strengthens brand identity, and supports marketing objectives.",
   },
   story: {
     image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=90",
+      "/uploads/site-images/team-portrait.jpg",
     title:
-      "I have photographed wedding, street, events throughout the United Kingdom as well as Europe, Asia.",
-    badge: "We are a team of professional photographers",
+      "From concept development and production to editing, retouching, design, and final delivery, we provide a complete visual workflow under one roof.",
+    badge: "A complete visual production partner",
     points: [
-      "Professional in-house assistants",
-      "Top standard studio",
-      "High technology equipments",
-      "Best location",
+      "Strategic Thinking",
+      "Consistent Quality",
+      "Commercial Focus",
+      "End-to-End Production",
     ],
   },
   stats: [
-    { value: "240000+", label: "Photos Taken" },
-    { value: "1700+", label: "Happy Clients" },
-    { value: "10000+", label: "Working Hours" },
-    { value: "15+", label: "Current Projects" },
+    { value: "360", label: "Virtual Tours" },
+    { value: "10+", label: "Service Areas" },
+    { value: "100%", label: "Commercial Focus" },
+    { value: "1", label: "Production Partner" },
   ],
   testimonial: {
     quote:
-      "Luumox provide the best photo studio service I have ever used. Our client was really happy with the outcome and we will definitely come back again!",
-    name: "Michael Smith",
-    company: "Apple Co.",
+      "Our clients trust us to create content that enhances their image and strengthens their market presence.",
+    name: "Lumos Visuals",
+    company: "Corporate & Commercial Visual Production",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=90",
+      "/uploads/site-images/conference-panel.jpg",
   },
   features: [
     {
-      title: "Professional in-house assistants",
-      body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
+      title: "Strategic Thinking",
+      body: "Every project begins with understanding your objectives and audience.",
     },
     {
-      title: "Top standard studio",
+      title: "Consistent Quality",
       body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
+        "A unified workflow ensures consistency across photography, video, virtual tours, and design.",
     },
     {
-      title: "High technology equipments",
-      body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
+      title: "Commercial Focus",
+      body: "Our work is designed to support marketing, communication, sales, and brand growth.",
     },
   ],
   photographers: [
     {
-      name: "Alan Cooper",
+      name: "Strategic Thinking",
       image:
-        "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/team-portrait.jpg",
     },
     {
-      name: "John Smithy",
+      name: "Consistent Quality",
       image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/conference-panel.jpg",
     },
     {
-      name: "Peter Sandler",
+      name: "Commercial Focus",
       image:
-        "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/event-lobby.jpg",
     },
     {
-      name: "Ricardo Gomez",
+      name: "End-to-End Production",
       image:
-        "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/conference-room.jpg",
     },
   ],
 };

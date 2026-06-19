@@ -68,6 +68,15 @@ export type HomeContent = {
       ghost: string;
     }
   >;
+  itServices?: {
+    title: string;
+    items: Array<{
+      title: string;
+      body: string;
+      image: string;
+      imageAlt?: string;
+    }>;
+  };
   photographers: Array<{ name: string; image: string }>;
   works: CmsLinkedImage[];
   facilities: Array<{ title: string; image: string; imageAlt?: string; body?: string }>;
@@ -118,6 +127,35 @@ export type ServicesContent = {
     phone: string;
     email: string;
   };
+};
+
+export type DynamicServicePage = {
+  slug: string;
+  title: string;
+  navLabel: string;
+  excerpt: string;
+  heroImage: string;
+  mainImage: string;
+  mainImageAlt?: string;
+  body: string;
+  sidebarTitle: string;
+  chooseTitle: string;
+  chooseBody: string;
+  bullets: string[];
+  featureTitle: string;
+  featureBody: string;
+  downloads: Array<{ label: string; url: string }>;
+  faqs: Array<{ question: string; answer: string }>;
+  contactTitle: string;
+  contactPhone: string;
+  contactEmail: string;
+  contactCtaText: string;
+  contactCtaHref: string;
+  published: boolean;
+};
+
+export type DynamicServiceContent = {
+  services: DynamicServicePage[];
 };
 
 export type PortfolioContent = {

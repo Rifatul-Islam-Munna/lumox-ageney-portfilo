@@ -2,110 +2,175 @@ import type { ServicesContent } from "@/lib/cms-types";
 
 export const defaultServicesContent: ServicesContent = {
   hero: {
-    title: "Our service",
-    sub: "Our Service",
-    image:
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=2200&q=90",
+    title: "Comprehensive Visual Production Services",
+    sub: "Photography - Video Production - 360-degree Virtual Tours - Creative Post-Production",
+    image: "/uploads/site-images/conference-room.jpg",
   },
   feature: {
-    title: "Production service",
-    sub: "Advertise. filming. you name it",
+    title: "We create visual content designed to help businesses communicate, market, and grow.",
+    sub: "Tailored to each client goal",
     body:
-      "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts.",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1400&q=90",
+      "Whether documenting an international conference, showcasing a luxury hotel, creating a brand campaign, or developing an immersive virtual experience, every project is built around your goals.",
+    image: "/uploads/site-images/event-lobby.jpg",
   },
   steps: [
     {
       number: "1",
-      eyebrow: "First step",
-      title: "Gather info",
-      body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
+      eyebrow: "Strategy",
+      title: "Understand objectives",
+      body: "Every project begins with understanding your objectives, audience, platform, and commercial goals.",
     },
     {
       number: "2",
-      eyebrow: "Second step",
-      title: "Creative planning",
-      body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
+      eyebrow: "Production",
+      title: "Create with precision",
+      body: "Photography, video, virtual tours, and creative assets are produced with a consistent visual identity.",
     },
     {
       number: "3",
-      eyebrow: "Third step",
-      title: "Take action!",
-      body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
+      eyebrow: "Delivery",
+      title: "Finish for impact",
+      body: "Editing, retouching, grading, design, and final delivery are managed with attention to detail.",
     },
   ],
   services: [
     {
-      title: "Production service",
-      sub: "Advertise. filming. you name it",
+      title: "Conferences & Exhibitions",
+      sub: "Conference photography. speaker coverage. event highlights.",
       body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts.",
+        "Professional photography and video coverage for conferences, exhibitions, trade shows, summits, and networking events. We capture keynote presentations, panel discussions, audience engagement, sponsor activations, exhibitions, and behind-the-scenes moments.",
       image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1400&q=90",
+        "/uploads/site-images/conference-room.jpg",
       backdrop:
-        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?auto=format&fit=crop&w=1200&q=90",
+        "/uploads/site-images/event-lobby.jpg",
     },
     {
-      title: "Photoshoot service",
-      sub: "Modeling & personal shootings",
+      title: "Corporate Events",
+      sub: "Launches. ceremonies. company celebrations.",
       body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts.",
+        "Visual coverage for corporate gatherings, product launches, award ceremonies, gala events, team building activities, public relations events, corporate aftermovies, and social media content.",
       image:
-        "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=90",
+        "/uploads/site-images/event-lobby.jpg",
       backdrop:
-        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=90",
+        "/uploads/site-images/conference-panel.jpg",
     },
     {
-      title: "Post production",
-      sub: "Products. watches. bags",
+      title: "Commercial & Studio Photography",
+      sub: "Corporate portraits. products. brand campaigns.",
       body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts.",
+        "Professional imagery for businesses, brands, products, and marketing campaigns, including executive headshots, product photography, e-commerce photography, branding photography, and marketing campaigns.",
       image:
-        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=1400&q=90",
+        "/uploads/site-images/team-portrait.jpg",
       backdrop:
-        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?auto=format&fit=crop&w=1200&q=90",
+        "/uploads/site-images/event-lobby.jpg",
+    },
+    {
+      title: "Food & Hospitality Visuals",
+      sub: "Restaurants. hotels. menus. atmosphere.",
+      body:
+        "Photography and video production for restaurants, hotels, cafes, bars, and food brands, highlighting atmosphere, presentation, quality, and customer experience.",
+      image:
+        "/uploads/site-images/food-detail.jpg",
+      backdrop:
+        "/uploads/site-images/food-detail.jpg",
+    },
+    {
+      title: "Real Estate & Property Marketing",
+      sub: "Properties. hotels. Airbnb. drone. video.",
+      body:
+        "Visual content that showcases properties with clarity, atmosphere, and commercial appeal for buyers, investors, guests, and customers.",
+      image:
+        "/uploads/site-images/property-aerial.jpg",
+      backdrop:
+        "/uploads/site-images/property-aerial.jpg",
+    },
+    {
+      title: "Architecture & Interior Photography",
+      sub: "Architecture. interiors. hospitality projects.",
+      body:
+        "Photography and video production for architects, designers, developers, and hospitality projects with focus on composition, detail, lighting, and spatial experience.",
+      image:
+        "/uploads/site-images/conference-room.jpg",
+      backdrop:
+        "/uploads/site-images/conference-room.jpg",
+    },
+    {
+      title: "Fashion & Editorial Production",
+      sub: "Campaigns. lookbooks. editorial imagery.",
+      body:
+        "Creative visual content for designers, agencies, publications, and commercial campaigns, combining storytelling, aesthetics, and brand identity.",
+      image:
+        "/uploads/site-images/team-portrait.jpg",
+      backdrop:
+        "/uploads/site-images/team-portrait.jpg",
+    },
+    {
+      title: "Video Production",
+      sub: "Corporate films. brand films. reels. interviews.",
+      body:
+        "Strategic video content for modern marketing and communication, from event coverage and corporate films to promotional content and social media campaigns.",
+      image:
+        "/uploads/site-images/conference-panel.jpg",
+      backdrop:
+        "/uploads/site-images/conference-panel.jpg",
+    },
+    {
+      title: "360-degree Photography & Virtual Tours",
+      sub: "Immersive tours. panoramas. remote exploration.",
+      body:
+        "High-resolution panoramic photography and interactive virtual tours for hospitality, real estate, architecture, retail, tourism, museums, cultural venues, and commercial spaces.",
+      image:
+        "/uploads/site-images/property-aerial.jpg",
+      backdrop:
+        "/uploads/site-images/property-aerial.jpg",
+    },
+    {
+      title: "Post-Production & Creative Services",
+      sub: "Color grading. retouching. album and editorial design.",
+      body:
+        "Expert finishing for images, video, and publications, including photography color grading, fine art retouching, album design, and magazine or editorial design.",
+      image:
+        "/uploads/site-images/event-lobby.jpg",
+      backdrop:
+        "/uploads/site-images/event-lobby.jpg",
     },
   ],
   videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   photographers: [
     {
-      name: "Jeanette Kingston",
+      name: "Strategic Thinking",
       image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/team-portrait.jpg",
     },
     {
-      name: "Alan Cooper",
+      name: "Consistent Quality",
       image:
-        "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/conference-panel.jpg",
     },
     {
-      name: "John Smithy",
+      name: "Commercial Focus",
       image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/event-lobby.jpg",
     },
     {
-      name: "Peter Sandler",
+      name: "End-to-End Production",
       image:
-        "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/conference-room.jpg",
     },
   ],
   testimonial: {
     quote:
-      "Luumox provide the best photo studio service I have ever used. Our client was really happy with the outcome and we will definitely come back again!",
-    name: "Michael Smith",
-    company: "Apple Co.",
+      "We collaborate with companies, hotels, restaurants, architects, developers, agencies, event organizers, institutions, and entrepreneurs who value professional visual communication.",
+    name: "Lumos Visuals",
+    company: "Corporate & Commercial Visual Production",
     image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=90",
+      "/uploads/site-images/team-portrait.jpg",
   },
   booking: {
-    title: "Book for shooting",
+    title: "Let's Create Something Exceptional",
     body:
-      "If You Have Any Questions, Please Do Not Hesitate To Ask Us. Please Also Call Us Or Email Us Before Visiting To Make Sure That You Will Be Served With Our Best Services.",
-    phone: "+1-2345-2234",
-    email: "Sales@Goodlayers.Co",
+      "Whether you are planning an event, promoting a property, launching a campaign, or building a stronger brand presence, tell us about your project and we will recommend the most effective visual solution for your goals.",
+    phone: "Phone",
+    email: "Email",
   },
 };

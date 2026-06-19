@@ -2,10 +2,10 @@ import type { HomeContent } from "@/lib/cms-types";
 
 export const defaultHomeContent: HomeContent = {
   site: {
-    logoText: "luumo",
-    logoAccent: "x",
-    phone: "+1-2345-2234",
-    email: "sales@goodlayers.co",
+    logoText: "Lumos ",
+    logoAccent: "Visuals",
+    phone: "Phone",
+    email: "Email",
     socialLinks: [
       { label: "Facebook", href: "#", icon: "facebook" },
       { label: "Twitter", href: "#", icon: "twitter" },
@@ -15,172 +15,221 @@ export const defaultHomeContent: HomeContent = {
     ],
   },
   copy: {
-    aboutTitle:
-      "Founded in 2008 by professional photographer, John Smith. We product visual content service creative to post production.",
+    aboutTitle: "Visual Production Beyond Photography",
     aboutBodyLeft:
-      "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts. Separated They Live In Bookmarksgrove Right At The Coast Of The Semantics, <strong>A Large Language Ocean.</strong> A Small River Named Duden Flows By Their Place And Supplies It With The Necessary Regelialia. It Is A Paradisematic Country, In Which Roasted Parts Of Sentences Fly Into Your Mouthes It With The Necessary Regelialia.",
+      "Lumos Visuals is a commercial visual production studio specializing in photography, videography, immersive virtual experiences, and creative post-production.",
     aboutBodyRight:
-      "Lorem Ipsum Decided To Leave For The Far World Of Grammar. The Big Oxmox Advised Her Not To Do So, Because There Were Thousands Of Bad Commas, Wild Question Marks And Devious Semikoli, But The Little Blind Text Didnt Listen. She Packed Her Seven Versalia, Put Her Initial Into The Belt And Made.",
-    aboutCtaText: "Read more",
-    aboutCtaHref: "#services",
-    servicesSideLabel: "Our services",
-    serviceCtaText: "Learn more",
-    serviceCtaHref: "#about",
-    worksTitle: "Our works",
+      "We work with brands, businesses, hotels, architects, developers, agencies, and event organizers to create visual content that communicates value, strengthens brand identity, and supports marketing objectives. From concept development and production to editing, retouching, design, and final delivery, we provide a complete visual workflow under one roof.",
+    aboutCtaText: "Request a Quote",
+    aboutCtaHref: "/book",
+    servicesSideLabel: "Services",
+    serviceCtaText: "View service",
+    serviceCtaHref: "/services",
+    worksTitle: "Portfolio",
     worksBody:
-      "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts. Separated They Live In Bookmarksgrove Right At The Coast Of Theocean.",
-    worksCtaText: "View all works",
-    worksCtaHref: "#",
-    worksLoadMoreText: "Load more",
-    photographersTitle: "Meet photographers",
-    photographersSubtitle: "We are a team of super professional photographers",
-    facilitiesTitle: "Facilities",
-    facilitiesSubtitle: "We only use top tier equipments",
-    blogTitle: "Blog",
-    blogSubtitle: "Article, news, tips",
-    blogCtaText: "Read the blog",
-    blogCtaHref: "#",
-    contactTitle: "Contact us",
-    contactAddress: "456 Main Street, Buckingham Av. Xv34 London",
-    contactPhone: "+1-2345-2234",
-    contactEmail: "sales@goodlayers.co",
-    contactCtaText: "Contact form",
+      "Visual content for brands, events, hospitality, architecture, real estate, editorial projects, and commercial spaces.",
+    worksCtaText: "View portfolio",
+    worksCtaHref: "/portfolio",
+    worksLoadMoreText: "Explore more work",
+    photographersTitle: "Production Team",
+    photographersSubtitle: "Complete visual production from planning to final delivery",
+    facilitiesTitle: "Why work with us",
+    facilitiesSubtitle: "A complete visual production partner",
+    blogTitle: "Clients",
+    blogSubtitle: "Trusted by brands, businesses, and organizations",
+    blogCtaText: "Request a quote",
+    blogCtaHref: "/book",
+    contactTitle: "Contact",
+    contactAddress:
+      "Whether you are planning an event, promoting a property, launching a campaign, or building a stronger brand presence, we are here to help.",
+    contactPhone: "Phone",
+    contactEmail: "Email",
+    contactCtaText: "Request a Quote",
     contactCtaHref: "/book",
     mapSrc:
       "https://www.openstreetmap.org/export/embed.html?bbox=-0.384%2C51.389%2C-0.213%2C51.447&layer=mapnik&marker=51.412%2C-0.300",
-    footerCopyright: "Copyright 2018, GoodLayers. All right reserved",
+    footerCopyright: "Lumos Visuals - Corporate & Commercial Visual Production",
   },
   heroSlides: [
     {
-      eyebrow: "Best studio wordpress theme",
-      title: "Luumox",
-      body: "Founded in 2008 by professional photographer, John Smith. We product visual content full-service creative to post production.",
-      cta: "View our works",
-      href: "#services",
-      image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=90",
+      eyebrow: "Corporate & Commercial Visual Production",
+      title: "Lumos Visuals",
+      body:
+        "Premium visual content for brands, events, and spaces. Photography, video production, 360-degree virtual tours, and creative post-production for businesses, hospitality, architecture, and commercial spaces.",
+      cta: "View Portfolio",
+      href: "/portfolio",
+      image: "/uploads/site-images/event-lobby.jpg",
     },
     {
-      eyebrow: "Production. fashion. editorial",
-      title: "Studio",
-      body: "We shape campaigns, portraits, product stories, and full-service visual systems for brands that need sharp direction from shoot to delivery.",
-      cta: "Meet photographers",
-      href: "#photographers",
-      image:
-        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2400&q=90",
+      eyebrow: "Photography. Video. Virtual Tours.",
+      title: "Visual Production",
+      body:
+        "From conferences and corporate events to hotels, restaurants, real estate, and editorial projects, we deliver complete visual solutions designed to elevate brands, engage audiences, and support business growth.",
+      cta: "Request a Quote",
+      href: "/book",
+      image: "/uploads/site-images/conference-room.jpg",
     },
   ],
   services: [
     {
-      id: "photoshoot",
+      id: "conferences",
       tone: "yellow",
-      title: "Photoshoot services",
-      ghost: "Photoshoot",
-      sub: "Modeling & personal shootings",
-      body: "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
-      image:
-        "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=2200&q=90",
+      title: "Conferences & Exhibitions",
+      ghost: "Events",
+      sub: "Summits. trade shows. exhibitions.",
+      body:
+        "Professional photography and video coverage for conferences, exhibitions, trade shows, summits, and networking events.",
+      image: "/uploads/site-images/conference-room.jpg",
     },
     {
-      id: "production",
+      id: "corporate-events",
       tone: "dark",
-      title: "Production services",
-      ghost: "Production",
-      sub: "Advertise. filming. you name it",
+      title: "Corporate Events",
+      ghost: "Corporate",
+      sub: "Launches. ceremonies. celebrations.",
       body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2200&q=90",
+        "Visual coverage for corporate gatherings, launch events, ceremonies, and company celebrations, creating valuable marketing assets for future communication.",
+      image: "/uploads/site-images/event-lobby.jpg",
     },
     {
-      id: "post-production",
+      id: "commercial-studio",
       tone: "yellow",
-      title: "Post production",
-      ghost: "Production",
-      sub: "Products. watches. bags",
+      title: "Commercial & Studio Photography",
+      ghost: "Studio",
+      sub: "Portraits. products. campaigns.",
       body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia.",
-      image:
-        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=2200&q=90",
+        "Professional imagery for businesses, brands, products, and marketing campaigns, from executive portraits to branded content.",
+      image: "/uploads/site-images/team-portrait.jpg",
     },
   ],
+  itServices: {
+    title: "exclusive IT Services",
+    items: [
+      {
+        title: "Database Security",
+        body:
+          "Marketing repurpose success in professions whereas in services sapien maximus design.",
+        image:
+          "/uploads/site-images/conference-panel.jpg",
+        imageAlt: "Database security service",
+      },
+      {
+        title: "Digital Marketing",
+        body:
+          "Marketing repurpose success in professions whereas in services sapien maximus design.",
+        image:
+          "/uploads/site-images/team-portrait.jpg",
+        imageAlt: "Digital marketing service",
+      },
+      {
+        title: "App Development",
+        body:
+          "Marketing repurpose success in professions whereas in services sapien maximus design.",
+        image:
+          "/uploads/site-images/event-lobby.jpg",
+        imageAlt: "App development service",
+      },
+      {
+        title: "App Development",
+        body:
+          "Marketing repurpose success in professions whereas in services sapien maximus design.",
+        image:
+          "/uploads/site-images/conference-room.jpg",
+        imageAlt: "IT service team",
+      },
+      {
+        title: "App Development",
+        body:
+          "Marketing repurpose success in professions whereas in services sapien maximus design.",
+        image:
+          "/uploads/site-images/property-aerial.jpg",
+        imageAlt: "Application planning service",
+      },
+      {
+        title: "App Development",
+        body:
+          "Marketing repurpose success in professions whereas in services sapien maximus design.",
+        image:
+          "/uploads/site-images/food-detail.jpg",
+        imageAlt: "Business technology service",
+      },
+    ],
+  },
   photographers: [
     {
-      name: "John Smithy",
+      name: "Strategic Thinking",
       image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/team-portrait.jpg",
     },
     {
-      name: "Peter Sandler",
+      name: "Consistent Quality",
       image:
-        "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/conference-panel.jpg",
     },
     {
-      name: "Ricardo Gomez",
+      name: "Commercial Focus",
       image:
-        "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/event-lobby.jpg",
     },
     {
-      name: "James Smith",
+      name: "End-to-End Production",
       image:
-        "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/conference-room.jpg",
     },
   ],
   works: [
-    { image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=900&q=90", imageAlt: "Fashion portfolio photo", title: "Fashion set", href: "/portfolio" },
-    { image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=90", imageAlt: "Interior portfolio photo", title: "Interior shoot", href: "/portfolio" },
-    { image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=90", imageAlt: "Model campaign photo", title: "Campaign", href: "/portfolio" },
-    { image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=90", imageAlt: "Architecture portfolio photo", title: "Architecture", href: "/portfolio" },
-    { image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=90", imageAlt: "City editorial photo", title: "Editorial", href: "/portfolio" },
-    { image: "https://images.unsplash.com/photo-1532460734809-e7f8475ca917?auto=format&fit=crop&w=900&q=90", imageAlt: "Studio production photo", title: "Production", href: "/portfolio" },
+    { image: "/uploads/site-images/conference-room.jpg", imageAlt: "Conference room prepared for event photography", title: "Conferences & Exhibitions", href: "/portfolio" },
+    { image: "/uploads/site-images/event-lobby.jpg", imageAlt: "Corporate event networking coverage", title: "Corporate Events", href: "/portfolio" },
+    { image: "/uploads/site-images/team-portrait.jpg", imageAlt: "Corporate team portrait production", title: "Commercial Photography", href: "/portfolio" },
+    { image: "/uploads/site-images/food-detail.jpg", imageAlt: "Food and hospitality photography detail", title: "Food & Hospitality", href: "/portfolio" },
+    { image: "/uploads/site-images/conference-panel.jpg", imageAlt: "Panel discussion photography", title: "Architecture & Interior", href: "/portfolio" },
+    { image: "/uploads/site-images/property-aerial.jpg", imageAlt: "Aerial property and hospitality marketing image", title: "Property Marketing", href: "/portfolio" },
   ],
   facilities: [
     {
-      title: "Professional in-house assistants",
-      body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts. Separated.",
+      title: "Strategic Thinking",
+      body: "Every project begins with understanding your objectives and audience.",
       image:
-        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/event-lobby.jpg",
     },
     {
-      title: "Top standard studio",
+      title: "Consistent Quality",
       body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts. Separated.",
+        "A unified workflow ensures consistency across photography, video, virtual tours, and design.",
       image:
-        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/conference-panel.jpg",
     },
     {
-      title: "High technology equipments",
-      body:
-        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts. Separated.",
+      title: "Commercial Focus",
+      body: "Our work is designed to support marketing, communication, sales, and brand growth.",
       image:
-        "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/team-portrait.jpg",
     },
   ],
   posts: [
     {
-      title: "Sigma 16mm f/1.4 for micro four-thirds captures the artistic view of the world",
-      comments: "2 comments",
-      date: "June 6, 2016",
-      href: "#",
+      title: "Trusted By Brands, Businesses & Organizations",
+      comments: "Clients",
+      date: "",
+      href: "/book",
       image:
-        "https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/team-portrait.jpg",
     },
     {
-      title: "4 reasons why you should consider getting an office out from your home",
-      comments: "One comment",
-      date: "June 6, 2016",
-      href: "#",
+      title: "Let's Create Something Exceptional",
+      comments: "Contact",
+      date: "",
+      href: "/book",
       image:
-        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/conference-room.jpg",
     },
     {
-      title: "Hasselblad 1.21 firmware update for X1D and H6D cameras",
-      comments: "3 comments",
-      date: "June 6, 2016",
-      href: "#",
+      title: "Complete Visual Production Partner",
+      comments: "Production",
+      date: "",
+      href: "/services",
       image:
-        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=90",
+        "/uploads/site-images/event-lobby.jpg",
     },
   ],
 };

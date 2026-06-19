@@ -8,6 +8,7 @@ import {
   NewspaperIcon,
   SearchIcon,
   Settings2Icon,
+  WrenchIcon,
 } from "lucide-react";
 import { logoutAdmin } from "@/app/admin/actions";
 import { BlogCmsForm } from "@/components/admin/blog-cms-form";
@@ -37,6 +38,7 @@ const nav = [
   { title: "Home page", href: "/admin/home", icon: HomeIcon },
   { title: "About page", href: "/admin/about", icon: FileTextIcon },
   { title: "Services page", href: "/admin/services", icon: Settings2Icon },
+  { title: "Dynamic services", href: "/admin/dynamic-services", icon: WrenchIcon },
   { title: "Portfolio page", href: "/admin/portfolio", icon: ImagesIcon },
   { title: "Blog page", href: "/admin/blog", icon: NewspaperIcon, active: true },
   { title: "SEO", href: "/admin/seo", icon: SearchIcon },

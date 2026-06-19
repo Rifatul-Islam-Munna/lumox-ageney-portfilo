@@ -37,17 +37,17 @@ export default async function AboutPage() {
         className="relative min-h-[520px] overflow-hidden bg-black text-white md:min-h-[620px]"
         style={{
           backgroundImage:
-            `linear-gradient(rgba(0,0,0,.66), rgba(0,0,0,.82)), url(${content.hero.image})`,
+            `linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.9)), url(${content.hero.image})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
         <SiteHeader />
         <div className="relative z-10 flex flex-col items-center pt-36 text-center md:pt-48">
-          <h1 className="text-[42px] font-black uppercase tracking-[-0.05em] md:text-[55px]">
+          <h1 className="image-hero-title text-[42px] font-black uppercase tracking-[-0.05em] md:text-[55px]">
             {content.hero.title}
           </h1>
-          <p className="mt-2 text-[15px] font-black text-[#ffd018]">{content.hero.sub}</p>
+          <p className="image-hero-kicker mt-2 text-[15px] font-black">{content.hero.sub}</p>
         </div>
       </section>
 

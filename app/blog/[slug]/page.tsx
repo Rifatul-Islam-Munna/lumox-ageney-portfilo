@@ -52,15 +52,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section
         className="relative min-h-[460px] overflow-hidden bg-black text-white md:min-h-[560px]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.84)), url(${post.image})`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.9)), url(${post.image})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
         <SiteHeader />
         <div className="relative z-10 mx-auto flex max-w-[980px] flex-col px-7 pt-32 md:pt-44">
-          <p className="text-[13px] font-black uppercase tracking-[0.18em] text-[#ffd018]">{post.category}</p>
-          <h1 className="mt-4 max-w-[820px] text-[38px] font-black uppercase leading-[1.02] tracking-[-0.05em] sm:text-[48px] md:text-[58px]">
+          <p className="image-hero-kicker text-[13px] font-black uppercase tracking-[0.18em]">{post.category}</p>
+          <h1 className="image-hero-title mt-4 max-w-[820px] text-[38px] font-black uppercase leading-[1.02] tracking-[-0.05em] sm:text-[48px] md:text-[58px]">
             {post.title}
           </h1>
         </div>

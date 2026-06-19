@@ -25,8 +25,7 @@ const heroSlides = [
     body: "Founded in 2008 by professional photographer, John Smith. We product visual content full-service creative to post production. Ultimately our mission is to help people to see beauty in themselves.",
     cta: "View our works",
     href: "#services",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=90",
+    image: "/uploads/site-images/event-lobby.jpg",
   },
   {
     eyebrow: "Production. fashion. editorial",
@@ -34,8 +33,7 @@ const heroSlides = [
     body: "We shape campaigns, portraits, product stories, and full-service visual systems for brands that need sharp direction from shoot to delivery.",
     cta: "Meet photographers",
     href: "#photographers",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2400&q=90",
+    image: "/uploads/site-images/conference-room.jpg",
   },
 ];
 
@@ -47,8 +45,7 @@ const services = [
     ghost: "Photoshoot",
     sub: "Modeling & personal shootings",
     icon: Camera,
-    image:
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=2200&q=90",
+    image: "/uploads/site-images/conference-room.jpg",
   },
   {
     id: "production",
@@ -57,8 +54,7 @@ const services = [
     ghost: "Production",
     sub: "Advertise. filming. you name it",
     icon: Film,
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2200&q=90",
+    image: "/uploads/site-images/event-lobby.jpg",
   },
   {
     id: "post-production",
@@ -67,8 +63,7 @@ const services = [
     ghost: "Production",
     sub: "Products. watches. bags",
     icon: ShoppingBag,
-    image:
-      "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=2200&q=90",
+    image: "/uploads/site-images/food-detail.jpg",
   },
 ] satisfies Array<HomeContent["services"][number] & { icon: typeof Camera }>;
 
@@ -82,50 +77,43 @@ const socialLinks = [
 const photographers = [
   {
     name: "John Smithy",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/team-portrait.jpg",
   },
   {
     name: "Peter Sandler",
-    image:
-      "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/conference-panel.jpg",
   },
   {
     name: "Ricardo Gomez",
-    image:
-      "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/event-lobby.jpg",
   },
   {
     name: "James Smith",
-    image:
-      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/conference-room.jpg",
   },
 ];
 
 const works = [
-  { image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=900&q=90", imageAlt: "Fashion portfolio photo", title: "Fashion set", href: "/portfolio" },
-  { image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=90", imageAlt: "Interior portfolio photo", title: "Interior shoot", href: "/portfolio" },
-  { image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=90", imageAlt: "Model campaign photo", title: "Campaign", href: "/portfolio" },
-  { image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=90", imageAlt: "Architecture portfolio photo", title: "Architecture", href: "/portfolio" },
-  { image: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=90", imageAlt: "City editorial photo", title: "Editorial", href: "/portfolio" },
-  { image: "https://images.unsplash.com/photo-1532460734809-e7f8475ca917?auto=format&fit=crop&w=900&q=90", imageAlt: "Studio production photo", title: "Production", href: "/portfolio" },
+  { image: "/uploads/site-images/team-portrait.jpg", imageAlt: "Fashion portfolio photo", title: "Fashion set", href: "/portfolio" },
+  { image: "/uploads/site-images/conference-room.jpg", imageAlt: "Interior portfolio photo", title: "Interior shoot", href: "/portfolio" },
+  { image: "/uploads/site-images/conference-panel.jpg", imageAlt: "Model campaign photo", title: "Campaign", href: "/portfolio" },
+  { image: "/uploads/site-images/property-aerial.jpg", imageAlt: "Architecture portfolio photo", title: "Architecture", href: "/portfolio" },
+  { image: "/uploads/site-images/event-lobby.jpg", imageAlt: "City editorial photo", title: "Editorial", href: "/portfolio" },
+  { image: "/uploads/site-images/food-detail.jpg", imageAlt: "Studio production photo", title: "Production", href: "/portfolio" },
 ];
 
 const facilities = [
   {
     title: "Professional in-house assistants",
-    image:
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/conference-room.jpg",
   },
   {
     title: "Top standard studio",
-    image:
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/conference-panel.jpg",
   },
   {
     title: "High technology equipments",
-    image:
-      "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/event-lobby.jpg",
   },
 ];
 
@@ -133,20 +121,17 @@ const posts = [
   {
     title: "Sigma 16mm f/1.4 for micro four-thirds captures the artistic view of the world",
     comments: "2 comments",
-    image:
-      "https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/conference-panel.jpg",
   },
   {
     title: "4 reasons why you should consider getting an office out from your home",
     comments: "One comment",
-    image:
-      "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/conference-room.jpg",
   },
   {
     title: "Hasselblad 1.21 firmware update for X1D and H6D cameras",
     comments: "3 comments",
-    image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=900&q=90",
+    image: "/uploads/site-images/team-portrait.jpg",
   },
 ];
 
@@ -159,15 +144,8 @@ function blogHref(post: BlogContent["posts"][number]) {
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [blogPosts, setBlogPosts] = useState<BlogContent["posts"]>(defaultBlogContent.posts);
-  const [content, setContent] = useState<HomeContent>({
-    heroSlides,
-    services,
-    photographers,
-    works,
-    facilities,
-    posts,
-  });
-  const heroList = content.heroSlides.length ? content.heroSlides : heroSlides;
+  const [content, setContent] = useState<HomeContent>(defaultHomeContent);
+  const heroList = content.heroSlides.length ? content.heroSlides : defaultHomeContent.heroSlides;
   const hero = heroList[Math.min(activeSlide, heroList.length - 1)];
   const copy = { ...defaultHomeContent.copy!, ...content.copy };
 
@@ -197,7 +175,7 @@ export default function Home() {
             ].join(" ")}
             key={slide.title}
             style={{
-              backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.98) 0%, rgba(0,0,0,.82) 31%, rgba(0,0,0,.42) 68%, rgba(0,0,0,.18) 100%), linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.92)), url(${slide.image})`,
+              backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.98) 0%, rgba(0,0,0,.9) 34%, rgba(0,0,0,.68) 68%, rgba(0,0,0,.5) 100%), linear-gradient(180deg, rgba(0,0,0,.34), rgba(0,0,0,.96)), url(${slide.image})`,
             }}
           />
         ))}
@@ -205,15 +183,15 @@ export default function Home() {
         <SiteHeader />
 
         <div className="relative z-10 mx-auto flex max-w-[1290px] flex-col px-5 pt-24 sm:px-12 sm:pt-32 md:pt-48 lg:px-0">
-          <p className="mb-3 max-w-[92vw] text-[14px] font-medium uppercase tracking-[0.18em] text-[#ffd018] sm:text-[22px] md:text-[30px]">
+          <p className="image-hero-kicker mb-3 max-w-[92vw] text-[14px] font-black uppercase tracking-[0.18em] sm:text-[22px] md:text-[30px]">
             {hero.eyebrow}
           </p>
-          <h1 className="relative w-fit max-w-[92vw] text-[52px] font-black uppercase leading-[0.82] tracking-[-0.055em] text-white min-[380px]:text-[64px] sm:text-[112px] md:text-[136px] lg:text-[155px]">
+          <h1 className="image-hero-title relative w-fit max-w-[92vw] text-[52px] font-black uppercase leading-[0.82] tracking-[-0.055em] min-[380px]:text-[64px] sm:text-[112px] md:text-[136px] lg:text-[155px]">
             {hero.title}
-            <span className="absolute bottom-[.08em] left-0 -z-10 h-3 w-[112%] bg-[#ffd018] md:h-4" />
+            <span className="absolute bottom-[.08em] left-0 -z-10 h-3 w-[112%] bg-[#ffd018]/90 md:h-4" />
           </h1>
           <div
-            className="mt-8 max-w-[690px] text-[13px] font-black uppercase leading-[1.7] text-white [&_p]:mb-3 sm:mt-12 sm:text-[16px] md:text-[18px]"
+            className="image-hero-body mt-8 max-w-[760px] text-[14px] font-semibold normal-case leading-[1.62] [&_p]:mb-3 sm:mt-12 sm:text-[16px] md:text-[18px]"
             dangerouslySetInnerHTML={{ __html: hero.body ?? "" }}
           />
           <a
@@ -290,6 +268,46 @@ export default function Home() {
         </div>
       </section>
 
+      {content.itServices?.items?.length ? (
+        <section className="it-service-section relative overflow-hidden bg-[#050505] px-5 py-16 text-white sm:px-12 sm:py-24">
+          <div className="pointer-events-none absolute left-[14%] top-8 h-12 w-12 rounded-full border border-[#ffd018] sm:h-14 sm:w-14" />
+          <div className="pointer-events-none absolute left-[18%] top-16 h-2 w-2 rounded-full bg-[#ffd018]" />
+          <div className="mx-auto max-w-[1250px]">
+            <h2 className="text-center text-[32px] font-extrabold leading-none text-[#ffd018] sm:text-[42px] md:text-[52px]">
+              {content.itServices.title}
+            </h2>
+            <div className="mt-16 grid gap-x-7 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
+              {content.itServices.items.map((service, index) => (
+                <article
+                  className="it-service-card group relative isolate min-h-[310px] overflow-visible rounded-[28px] rounded-tr-none bg-[#111] px-8 pb-16 pt-12 text-center ring-1 ring-[#ffd018]/20 transition duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(255,208,24,0.18)] sm:px-12"
+                  key={`${service.title}-${index}`}
+                >
+                  <span className="absolute left-0 top-0 z-20 h-1 w-full bg-white/15" />
+                  <span className="absolute left-[16%] top-0 z-20 h-1 w-[42%] bg-[#ffd018] transition-all duration-300 group-hover:left-0 group-hover:w-full" />
+                  <span className="it-circuit absolute inset-0 z-0 rounded-[28px] rounded-tr-none opacity-20 transition duration-300 group-hover:opacity-35" />
+                  <div className="relative z-10">
+                    <h3 className="text-[23px] font-extrabold leading-tight text-white sm:text-[27px]">
+                      {service.title}
+                    </h3>
+                    <div className="mx-auto mt-9 h-px max-w-[330px] bg-[#ffd018]/45" />
+                    <p className="mx-auto mt-8 max-w-[340px] text-[16px] font-medium leading-[1.65] text-white/78">
+                      {service.body}
+                    </p>
+                  </div>
+                  <div className="absolute -bottom-5 left-1/2 z-20 grid h-24 w-24 -translate-x-1/2 place-items-start overflow-hidden rounded-t-full bg-[#050505] pt-7 ring-1 ring-[#ffd018]/30">
+                    <img
+                      alt={service.imageAlt ?? service.title}
+                      className="h-10 w-16 object-cover transition duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+                      src={service.image}
+                    />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <div id="services">
         {content.services.map((service, index) => {
           const Icon =
@@ -303,7 +321,7 @@ export default function Home() {
           return (
             <section
               className={[
-                "relative min-h-[640px] overflow-hidden px-5 py-16 sm:min-h-[680px] sm:px-12 sm:py-24 md:py-32",
+                "readable-image-panel relative min-h-[640px] overflow-hidden px-5 py-16 sm:min-h-[680px] sm:px-12 sm:py-24 md:py-32",
                 dark ? "bg-[#111] text-white" : "bg-[#f9ca00] text-black",
               ].join(" ")}
               id={service.id}
@@ -316,8 +334,8 @@ export default function Home() {
               }}
             >
               {index === 0 && (
-                <div className="absolute left-[18%] top-0 hidden h-56 items-start justify-center bg-white px-5 pt-8 text-black md:flex">
-                  <span className="[writing-mode:vertical-rl] text-[15px] font-black uppercase tracking-[0.45em]">
+                <div className="absolute left-[18%] top-0 hidden h-44 items-start justify-center bg-[#ffd018] px-4 pt-7 text-black md:flex">
+                  <span className="[writing-mode:vertical-rl] text-[13px] font-extrabold uppercase tracking-[0.28em]">
                     &larr; {copy.servicesSideLabel}
                   </span>
                 </div>
@@ -329,34 +347,33 @@ export default function Home() {
                   dark ? "md:ml-auto md:mr-[6%] md:w-[58%]" : "",
                 ].join(" ")}
               >
-                <h2 className="relative text-[40px] font-black uppercase leading-[.9] tracking-[-0.055em] min-[380px]:text-[48px] sm:text-[84px] md:text-[118px]">
+                <div className="max-w-[760px] bg-black/58 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.42)] ring-1 ring-white/10 backdrop-blur-[2px] sm:p-9">
+                <h2 className="relative text-[48px] font-extrabold uppercase leading-[.9] tracking-normal text-white min-[380px]:text-[56px] sm:text-[92px]">
                   <span
                     className={[
-                      "absolute -top-[.13em] left-0",
-                      dark ? "text-white/10" : "text-white/45",
+                      "absolute -top-[.18em] left-0 text-[#ffd018]/20",
                     ].join(" ")}
                   >
                     {service.ghost}
                   </span>
                   <span
                     className={[
-                      "relative block pt-8 text-[30px] tracking-[-0.06em] min-[380px]:text-[36px] sm:pt-10 sm:text-[52px]",
-                      dark ? "font-light tracking-[0.08em]" : "",
+                      "relative block pt-10 text-[32px] font-extrabold tracking-normal text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.75)] min-[380px]:text-[38px] sm:pt-12 sm:text-[58px]",
                     ].join(" ")}
                   >
                     {service.title}
                   </span>
                 </h2>
-                <p className="mt-4 text-[12px] font-black uppercase tracking-[0.22em] sm:text-[16px] sm:tracking-[0.42em]">
+                <p className="mt-4 text-[13px] font-bold uppercase tracking-[0.08em] text-[#ffd018] sm:text-[16px]">
                   {service.sub}
                 </p>
 
                 <div className="mt-10 grid max-w-[720px] gap-5 sm:mt-12 sm:grid-cols-[74px_1fr] sm:gap-7">
-                  <Icon className="mt-1 h-12 w-12 stroke-[2.2] sm:h-16 sm:w-16" />
+                  <Icon className="mt-1 h-12 w-12 stroke-[2.2] text-[#ffd018] sm:h-16 sm:w-16" />
                   <div
                     className={[
-                      "text-[13px] font-black uppercase leading-[1.75] [&_p]:mb-3 sm:text-[16px] sm:leading-[1.8]",
-                      dark ? "text-white/65" : "",
+                      "text-[14px] font-semibold normal-case leading-[1.7] [&_p]:mb-3 sm:text-[16px]",
+                      "text-white/90",
                     ].join(" ")}
                     dangerouslySetInnerHTML={{
                       __html:
@@ -368,13 +385,13 @@ export default function Home() {
 
                 <a
                   className={[
-                    "mt-8 inline-flex items-center gap-5 text-[15px] font-black uppercase tracking-[0.28em]",
-                    dark ? "text-[#ffd018]" : "text-white",
+                    "mt-8 inline-flex items-center gap-5 text-[15px] font-extrabold uppercase tracking-[0.12em] text-[#ffd018]",
                   ].join(" ")}
                   href={copy.serviceCtaHref}
                 >
                   {copy.serviceCtaText} <span className="text-3xl leading-none">&larr;</span>
                 </a>
+                </div>
               </div>
             </section>
           );

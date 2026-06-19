@@ -14,7 +14,7 @@ export default function AdminLoginPage() {
     <main className="flex min-h-screen items-center justify-center bg-muted p-4">
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle>Luumox admin</CardTitle>
+          <CardTitle>Lumos Visuals admin</CardTitle>
           <CardDescription>Use env email/password.</CardDescription>
         </CardHeader>
         <CardContent>

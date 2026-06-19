@@ -29,18 +29,18 @@ export default async function BookPage() {
       <section
         className="relative min-h-[520px] overflow-hidden bg-black text-white md:min-h-[620px]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.86)), url(${content.hero.image})`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.92)), url(${content.hero.image})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
         <SiteHeader />
         <div className="relative z-10 mx-auto max-w-[1100px] px-7 pt-36 sm:px-12 md:pt-48">
-          <p className="text-[13px] font-black uppercase tracking-[0.22em] text-[#ffd018]">Contact</p>
-          <h1 className="mt-4 max-w-[760px] text-[42px] font-black uppercase leading-[1] tracking-[-0.05em] md:text-[64px]">
+          <p className="image-hero-kicker text-[13px] font-black uppercase tracking-[0.22em]">Contact</p>
+          <h1 className="image-hero-title mt-4 max-w-[760px] text-[42px] font-black uppercase leading-[1] tracking-[-0.05em] md:text-[64px]">
             {content.booking.title}
           </h1>
-          <p className="mt-6 max-w-[560px] text-[15px] font-medium leading-[1.8] text-white/78">
+          <p className="image-hero-body mt-6 max-w-[560px] text-[15px] font-semibold leading-[1.8]">
             {content.booking.body}
           </p>
         </div>

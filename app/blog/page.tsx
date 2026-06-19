@@ -45,18 +45,18 @@ export default async function BlogPage({
       <section
         className="relative min-h-[460px] overflow-hidden bg-black text-white md:min-h-[520px]"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.82)), url(${content.hero.image})`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,.76), rgba(0,0,0,.9)), url(${content.hero.image})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
         <SiteHeader />
         <div className="relative z-10 flex flex-col items-center px-7 pt-32 text-center md:pt-44">
-          <h1 className="text-[40px] font-black uppercase tracking-[-0.05em] sm:text-[50px] md:text-[58px]">
+          <h1 className="image-hero-title text-[40px] font-black uppercase tracking-[-0.05em] sm:text-[50px] md:text-[58px]">
             {content.hero.title}
           </h1>
           {content.hero.sub && (
-            <p className="mt-4 text-[15px] font-black text-[#ffd018]">
+            <p className="image-hero-kicker mt-4 text-[15px] font-black">
               {content.hero.sub}
             </p>
           )}

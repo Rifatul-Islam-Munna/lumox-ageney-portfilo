@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Mail, Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { defaultHomeContent } from "@/lib/home-defaults";
-import type { HomeContent } from "@/lib/cms-types";
+import type { DynamicServiceContent, HomeContent } from "@/lib/cms-types";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -18,6 +18,7 @@ const menuItems = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState<HomeContent>(defaultHomeContent);
+  const [dynamicServices, setDynamicServices] = useState<DynamicServiceContent["services"]>([]);
   const site = { ...defaultHomeContent.site!, ...content.site };
   const phoneHref = site.phone.replace(/[^\d+]/g, "");
 
@@ -26,6 +27,12 @@ export function SiteHeader() {
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
         if (data?.content) setContent(data.content);
+      })
+      .catch(() => null);
+    fetch("/api/cms/dynamic-services")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.content?.services) setDynamicServices(data.content.services.filter((item: DynamicServiceContent["services"][number]) => item.published));
       })
       .catch(() => null);
   }, []);
@@ -38,6 +45,24 @@ export function SiteHeader() {
         </Link>
 
         <div className="hidden items-center gap-6 text-[17px] font-extrabold tracking-[-0.02em] lg:flex">
+          <div className="group relative">
+            <Link className="nav-link flex items-center gap-2" href="/services">
+              Services
+            </Link>
+            {dynamicServices.length ? (
+              <div className="invisible absolute left-1/2 top-full z-50 mt-4 min-w-64 -translate-x-1/2 bg-black/92 p-3 opacity-0 shadow-2xl ring-1 ring-white/10 transition group-hover:visible group-hover:opacity-100">
+                {dynamicServices.map((service) => (
+                  <Link
+                    className="block border-b border-white/10 px-4 py-3 text-[15px] font-black text-white last:border-b-0 hover:bg-[#ffd018] hover:text-black"
+                    href={`/services/${service.slug}`}
+                    key={service.slug}
+                  >
+                    {service.navLabel || service.title}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+          </div>
           <a className="nav-link flex items-center gap-3" href={`tel:${phoneHref}`}>
             {site.phone} <Phone className="h-5 w-5 fill-[#ffd018] text-[#ffd018]" />
           </a>
@@ -59,7 +84,7 @@ export function SiteHeader() {
           className="fixed inset-0 z-50 bg-black/90 bg-cover bg-center text-white"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)), url(https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?auto=format&fit=crop&w=2200&q=90)",
+              "linear-gradient(rgba(0,0,0,.92), rgba(0,0,0,.92)), url(/uploads/site-images/conference-panel.jpg)",
           }}
         >
           <div className="flex h-28 items-center justify-between px-7 sm:px-12 lg:px-14">
@@ -73,14 +98,29 @@ export function SiteHeader() {
 
           <div className="mx-auto mt-14 w-[min(90vw,570px)]">
             {menuItems.map((item) => (
-              <Link
-                className="block border-b border-white/20 py-5 text-center text-[24px] font-black tracking-[-0.04em] transition hover:text-[#ffd018]"
-                href={item.href}
-                key={item.label}
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
+              <div key={item.label}>
+                <Link
+                  className="block border-b border-white/20 py-5 text-center text-[24px] font-black tracking-[-0.04em] transition hover:text-[#ffd018]"
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+                {item.href === "/services" && dynamicServices.length ? (
+                  <div className="border-b border-white/20 bg-white/5 py-3">
+                    {dynamicServices.map((service) => (
+                      <Link
+                        className="block py-2 text-center text-[18px] font-black text-white/72 transition hover:text-[#ffd018]"
+                        href={`/services/${service.slug}`}
+                        key={service.slug}
+                        onClick={() => setOpen(false)}
+                      >
+                        {service.navLabel || service.title}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             ))}
           </div>
         </div>

@@ -39,6 +39,11 @@ function withDefaults(value: HomeContent): HomeContent {
       ...defaultHomeContent.copy!,
       ...value.copy,
     },
+    itServices: {
+      ...defaultHomeContent.itServices!,
+      ...value.itServices,
+      items: value.itServices?.items?.length ? value.itServices.items : defaultHomeContent.itServices!.items,
+    },
   };
 }
 
@@ -150,6 +155,7 @@ export function HomeCmsForm({ initialContent }: { initialContent: HomeContent })
         <TabsList>
           <TabsTrigger value="hero">Hero</TabsTrigger>
           <TabsTrigger value="about">About</TabsTrigger>
+          <TabsTrigger value="it-services">IT Services</TabsTrigger>
           <TabsTrigger value="services">Services</TabsTrigger>
           <TabsTrigger value="works">Works</TabsTrigger>
           <TabsTrigger value="people">People</TabsTrigger>
@@ -230,6 +236,93 @@ export function HomeCmsForm({ initialContent }: { initialContent: HomeContent })
               <Field><FieldLabel>Right description</FieldLabel><RichTextEditor value={copy.aboutBodyRight} onChange={(value) => update(["copy", "aboutBodyRight"], value)} /></Field>
               <Field><FieldLabel>Button text</FieldLabel><Input value={copy.aboutCtaText} onChange={(event) => update(["copy", "aboutCtaText"], event.target.value)} /></Field>
               <Field><FieldLabel>Button link</FieldLabel><Input value={copy.aboutCtaHref} onChange={(event) => update(["copy", "aboutCtaHref"], event.target.value)} /></Field>
+            </FieldGroup>
+          </SectionCard>
+        </TabsContent>
+
+        <TabsContent value="it-services">
+          <SectionCard title="IT service cards" description="Dynamic home service grid. Add as many services as needed.">
+            <FieldGroup>
+              <Field>
+                <FieldLabel>Section title</FieldLabel>
+                <Input
+                  value={content.itServices?.title ?? ""}
+                  onChange={(event) => update(["itServices", "title"], event.target.value)}
+                />
+              </Field>
+              {(content.itServices?.items ?? []).map((service, index) => (
+                <Card key={index} size="sm">
+                  <CardHeader>
+                    <CardTitle>Service {index + 1}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <FieldGroup>
+                      <Field>
+                        <FieldLabel>Title</FieldLabel>
+                        <Input
+                          value={service.title}
+                          onChange={(event) => update(["itServices", "items", index, "title"], event.target.value)}
+                        />
+                      </Field>
+                      <Field>
+                        <FieldLabel>Description</FieldLabel>
+                        <Textarea
+                          value={service.body}
+                          onChange={(event) => update(["itServices", "items", index, "body"], event.target.value)}
+                        />
+                      </Field>
+                      <Field>
+                        <FieldLabel>Image alt SEO</FieldLabel>
+                        <Input
+                          value={service.imageAlt ?? ""}
+                          onChange={(event) => update(["itServices", "items", index, "imageAlt"], event.target.value)}
+                        />
+                      </Field>
+                      {imageInput(["itServices", "items", index, "image"], service.image)}
+                      <Button
+                        type="button"
+                        variant="destructive"
+                        onClick={() =>
+                          setContent((current) => ({
+                            ...current,
+                            itServices: {
+                              ...(current.itServices ?? defaultHomeContent.itServices!),
+                              items: (current.itServices?.items ?? []).filter((_, i) => i !== index),
+                            },
+                          }))
+                        }
+                      >
+                        <TrashIcon data-icon="inline-start" />
+                        Remove service
+                      </Button>
+                    </FieldGroup>
+                  </CardContent>
+                </Card>
+              ))}
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() =>
+                  setContent((current) => ({
+                    ...current,
+                    itServices: {
+                      ...(current.itServices ?? defaultHomeContent.itServices!),
+                      items: [
+                        ...(current.itServices?.items ?? []),
+                        {
+                          title: "New IT Service",
+                          body: "Marketing repurpose success in professions whereas in services sapien maximus design.",
+                          image: "",
+                          imageAlt: "",
+                        },
+                      ],
+                    },
+                  }))
+                }
+              >
+                <PlusIcon data-icon="inline-start" />
+                Add IT service
+              </Button>
             </FieldGroup>
           </SectionCard>
         </TabsContent>
