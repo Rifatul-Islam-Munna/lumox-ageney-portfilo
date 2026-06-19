@@ -47,6 +47,31 @@ export const defaultDynamicServicesContent: DynamicServiceContent = {
       contactEmail: "hello@lumosvisuals.com",
       contactCtaText: "Contact Us",
       contactCtaHref: "/book",
+      sectionVisibility: {
+        overview: true,
+        valueCards: true,
+        process: true,
+        downloads: true,
+        faqs: true,
+        contact: true,
+      },
+      processSteps: [
+        { title: "Discover", body: "We define goals, users, content needs, and business requirements." },
+        { title: "Design", body: "We shape interface structure, service flow, visual direction, and page content." },
+        { title: "Deliver", body: "We prepare polished assets, reusable content blocks, downloads, and launch-ready support." },
+      ],
+      extraSections: [
+        {
+          enabled: true,
+          eyebrow: "Managed content",
+          title: "Flexible service storytelling",
+          body:
+            "<p>Add focused sections for strategy, deliverables, timelines, proof points, or any topic your service page needs.</p>",
+          image: "/uploads/site-images/conference-room.jpg",
+          imageAlt: "Service planning session",
+          imagePosition: "right",
+        },
+      ],
       published: true,
     },
   ],

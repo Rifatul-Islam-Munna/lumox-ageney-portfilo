@@ -151,6 +151,24 @@ export type DynamicServicePage = {
   contactEmail: string;
   contactCtaText: string;
   contactCtaHref: string;
+  sectionVisibility?: {
+    overview: boolean;
+    valueCards: boolean;
+    process: boolean;
+    downloads: boolean;
+    faqs: boolean;
+    contact: boolean;
+  };
+  processSteps?: Array<{ title: string; body: string }>;
+  extraSections?: Array<{
+    enabled: boolean;
+    eyebrow: string;
+    title: string;
+    body: string;
+    image?: string;
+    imageAlt?: string;
+    imagePosition: "left" | "right";
+  }>;
   published: boolean;
 };
 

@@ -334,6 +334,34 @@
       linear-gradient(135deg, transparent 0 34%, rgba(255, 255, 255, 0.62) 34.2% 34.7%, transparent 35% 100%),
       linear-gradient(90deg, transparent 0 10%, rgba(255, 255, 255, 0.75) 10.2% 10.6%, transparent 11% 100%);
     background-size: 100% 100%;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .it-service-card::before {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    content: "";
+    background:
+      radial-gradient(circle at var(--hover-x, 50%) var(--hover-y, 50%), rgba(255, 208, 24, 0.18), transparent 34%),
+      linear-gradient(120deg, transparent 0 32%, rgba(255, 208, 24, 0.14) 42%, transparent 52% 100%);
+    background-position: 120% 0;
+    background-size: 220% 100%;
+    border-radius: 28px 0 28px 28px;
+    opacity: 0;
+    transition:
+      background-position 620ms ease,
+      opacity 260ms ease;
+  }
+
+  .it-service-card:hover::before {
+    background-position: -40% 0;
+    opacity: 1;
+  }
+
+  .it-service-card:hover .it-circuit {
+    opacity: 0.5;
+    transform: translate3d(10px, -10px, 0);
   }
 
   .it-service-card::after {

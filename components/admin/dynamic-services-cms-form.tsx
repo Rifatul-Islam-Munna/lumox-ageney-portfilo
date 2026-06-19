@@ -35,6 +35,14 @@ function withDefaults(value: DynamicServiceContent): DynamicServiceContent {
           bullets: service.bullets?.length ? service.bullets : fallback.bullets,
           downloads: service.downloads?.length ? service.downloads : fallback.downloads,
           faqs: service.faqs?.length ? service.faqs : fallback.faqs,
+          sectionVisibility: {
+            ...fallback.sectionVisibility,
+            ...service.sectionVisibility,
+          },
+          processSteps: service.processSteps?.length ? service.processSteps : fallback.processSteps,
+          extraSections: service.extraSections?.length
+            ? service.extraSections.map((section) => ({ ...fallback.extraSections?.[0], ...section }))
+            : fallback.extraSections,
         }))
       : defaultDynamicServicesContent.services,
   };
@@ -166,6 +174,23 @@ export function DynamicServicesCmsForm({ initialContent }: { initialContent: Dyn
                   <Field><FieldLabel>Main image alt SEO</FieldLabel><Input value={service.mainImageAlt ?? ""} onChange={(event) => update(["services", index, "mainImageAlt"], event.target.value)} /></Field>
                   <Field><FieldLabel>Main content</FieldLabel><RichTextEditor value={service.body} onChange={(value) => update(["services", index, "body"], value)} /></Field>
 
+                  <Card size="sm">
+                    <CardHeader><CardTitle>Section visibility</CardTitle><CardDescription>Turn public page blocks on or off.</CardDescription></CardHeader>
+                    <CardContent>
+                      <div className="grid gap-3 md:grid-cols-3">
+                        {(["overview", "valueCards", "process", "downloads", "faqs", "contact"] as const).map((key) => (
+                          <Field className="flex-row items-center justify-between rounded-lg border p-3" key={key}>
+                            <FieldLabel>{key}</FieldLabel>
+                            <Switch
+                              checked={service.sectionVisibility?.[key] ?? true}
+                              onCheckedChange={(value) => update(["services", index, "sectionVisibility", key], value)}
+                            />
+                          </Field>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
                   <div className="grid gap-4 md:grid-cols-2">
                     <Field><FieldLabel>Why choose title</FieldLabel><Input value={service.chooseTitle} onChange={(event) => update(["services", index, "chooseTitle"], event.target.value)} /></Field>
                     <Field><FieldLabel>Feature title</FieldLabel><Input value={service.featureTitle} onChange={(event) => update(["services", index, "featureTitle"], event.target.value)} /></Field>
@@ -202,6 +227,59 @@ export function DynamicServicesCmsForm({ initialContent }: { initialContent: Dyn
                           </div>
                         ))}
                         <Button type="button" variant="outline" onClick={() => update(["services", index, "downloads"], [...service.downloads, { label: "New download", url: "" }])}><PlusIcon data-icon="inline-start" />Add download</Button>
+                      </FieldGroup>
+                    </CardContent>
+                  </Card>
+
+                  <Card size="sm">
+                    <CardHeader><CardTitle>Process steps</CardTitle><CardDescription>Shown when Process is enabled.</CardDescription></CardHeader>
+                    <CardContent>
+                      <FieldGroup>
+                        {(service.processSteps ?? []).map((step, stepIndex) => (
+                          <Card key={stepIndex} size="sm">
+                            <CardContent>
+                              <FieldGroup>
+                                <Field><FieldLabel>Title</FieldLabel><Input value={step.title} onChange={(event) => update(["services", index, "processSteps", stepIndex, "title"], event.target.value)} /></Field>
+                                <Field><FieldLabel>Body</FieldLabel><Textarea value={step.body} onChange={(event) => update(["services", index, "processSteps", stepIndex, "body"], event.target.value)} /></Field>
+                                <Button type="button" variant="destructive" onClick={() => update(["services", index, "processSteps"], (service.processSteps ?? []).filter((_, i) => i !== stepIndex))}><TrashIcon data-icon="inline-start" />Remove step</Button>
+                              </FieldGroup>
+                            </CardContent>
+                          </Card>
+                        ))}
+                        <Button type="button" variant="outline" onClick={() => update(["services", index, "processSteps"], [...(service.processSteps ?? []), { title: "New step", body: "Step details" }])}><PlusIcon data-icon="inline-start" />Add step</Button>
+                      </FieldGroup>
+                    </CardContent>
+                  </Card>
+
+                  <Card size="sm">
+                    <CardHeader><CardTitle>Extra dynamic sections</CardTitle><CardDescription>Add service-specific content blocks.</CardDescription></CardHeader>
+                    <CardContent>
+                      <FieldGroup>
+                        {(service.extraSections ?? []).map((section, sectionIndex) => (
+                          <Card key={sectionIndex} size="sm">
+                            <CardContent>
+                              <FieldGroup>
+                                <div className="grid gap-4 md:grid-cols-2">
+                                  <Field><FieldLabel>Eyebrow</FieldLabel><Input value={section.eyebrow} onChange={(event) => update(["services", index, "extraSections", sectionIndex, "eyebrow"], event.target.value)} /></Field>
+                                  <Field><FieldLabel>Title</FieldLabel><Input value={section.title} onChange={(event) => update(["services", index, "extraSections", sectionIndex, "title"], event.target.value)} /></Field>
+                                  <Field className="flex-row items-center justify-between rounded-lg border p-3"><FieldLabel>Enabled</FieldLabel><Switch checked={section.enabled} onCheckedChange={(value) => update(["services", index, "extraSections", sectionIndex, "enabled"], value)} /></Field>
+                                  <Field>
+                                    <FieldLabel>Image position</FieldLabel>
+                                    <select className="h-10 rounded-md border bg-background px-3 text-sm" value={section.imagePosition} onChange={(event) => update(["services", index, "extraSections", sectionIndex, "imagePosition"], event.target.value)}>
+                                      <option value="left">Left</option>
+                                      <option value="right">Right</option>
+                                    </select>
+                                  </Field>
+                                </div>
+                                <Field><FieldLabel>Body</FieldLabel><RichTextEditor value={section.body} onChange={(value) => update(["services", index, "extraSections", sectionIndex, "body"], value)} /></Field>
+                                {imageInput(["services", index, "extraSections", sectionIndex, "image"], section.image ?? "", "Section image URL")}
+                                <Field><FieldLabel>Image alt SEO</FieldLabel><Input value={section.imageAlt ?? ""} onChange={(event) => update(["services", index, "extraSections", sectionIndex, "imageAlt"], event.target.value)} /></Field>
+                                <Button type="button" variant="destructive" onClick={() => update(["services", index, "extraSections"], (service.extraSections ?? []).filter((_, i) => i !== sectionIndex))}><TrashIcon data-icon="inline-start" />Remove section</Button>
+                              </FieldGroup>
+                            </CardContent>
+                          </Card>
+                        ))}
+                        <Button type="button" variant="outline" onClick={() => update(["services", index, "extraSections"], [...(service.extraSections ?? []), { enabled: true, eyebrow: "New section", title: "Section title", body: "<p>Section content</p>", image: "", imageAlt: "", imagePosition: "right" }])}><PlusIcon data-icon="inline-start" />Add section</Button>
                       </FieldGroup>
                     </CardContent>
                   </Card>

@@ -103,7 +103,7 @@ export const defaultHomeContent: HomeContent = {
     },
   ],
   itServices: {
-    title: "exclusive IT Services",
+    title: "Exclusive IT Services",
     items: [
       {
         title: "Database Security",

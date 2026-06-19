@@ -5,6 +5,7 @@ import {
   Aperture,
   ArrowLeft,
   Camera,
+  ExternalLink,
   Film,
   Mail,
   Phone,
@@ -268,46 +269,6 @@ export default function Home() {
         </div>
       </section>
 
-      {content.itServices?.items?.length ? (
-        <section className="it-service-section relative overflow-hidden bg-[#050505] px-5 py-16 text-white sm:px-12 sm:py-24">
-          <div className="pointer-events-none absolute left-[14%] top-8 h-12 w-12 rounded-full border border-[#ffd018] sm:h-14 sm:w-14" />
-          <div className="pointer-events-none absolute left-[18%] top-16 h-2 w-2 rounded-full bg-[#ffd018]" />
-          <div className="mx-auto max-w-[1250px]">
-            <h2 className="text-center text-[32px] font-extrabold leading-none text-[#ffd018] sm:text-[42px] md:text-[52px]">
-              {content.itServices.title}
-            </h2>
-            <div className="mt-16 grid gap-x-7 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
-              {content.itServices.items.map((service, index) => (
-                <article
-                  className="it-service-card group relative isolate min-h-[310px] overflow-visible rounded-[28px] rounded-tr-none bg-[#111] px-8 pb-16 pt-12 text-center ring-1 ring-[#ffd018]/20 transition duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(255,208,24,0.18)] sm:px-12"
-                  key={`${service.title}-${index}`}
-                >
-                  <span className="absolute left-0 top-0 z-20 h-1 w-full bg-white/15" />
-                  <span className="absolute left-[16%] top-0 z-20 h-1 w-[42%] bg-[#ffd018] transition-all duration-300 group-hover:left-0 group-hover:w-full" />
-                  <span className="it-circuit absolute inset-0 z-0 rounded-[28px] rounded-tr-none opacity-20 transition duration-300 group-hover:opacity-35" />
-                  <div className="relative z-10">
-                    <h3 className="text-[23px] font-extrabold leading-tight text-white sm:text-[27px]">
-                      {service.title}
-                    </h3>
-                    <div className="mx-auto mt-9 h-px max-w-[330px] bg-[#ffd018]/45" />
-                    <p className="mx-auto mt-8 max-w-[340px] text-[16px] font-medium leading-[1.65] text-white/78">
-                      {service.body}
-                    </p>
-                  </div>
-                  <div className="absolute -bottom-5 left-1/2 z-20 grid h-24 w-24 -translate-x-1/2 place-items-start overflow-hidden rounded-t-full bg-[#050505] pt-7 ring-1 ring-[#ffd018]/30">
-                    <img
-                      alt={service.imageAlt ?? service.title}
-                      className="h-10 w-16 object-cover transition duration-300 group-hover:-translate-y-1 group-hover:scale-110"
-                      src={service.image}
-                    />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
-
       <div id="services">
         {content.services.map((service, index) => {
           const Icon =
@@ -418,7 +379,20 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
             {content.works.map((work, index) => {
               const item = typeof work === "string" ? { image: work, href: "", title: "", imageAlt: "" } : work;
-              const image = <img alt={item.imageAlt ?? item.title ?? ""} className="h-full w-full object-cover" src={item.image} />;
+              const image = (
+                <span className="group relative block h-full overflow-hidden">
+                  <img
+                    alt={item.imageAlt ?? item.title ?? ""}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-75"
+                    src={item.image}
+                  />
+                  <span className="absolute inset-0 grid place-items-center bg-black/0 opacity-0 transition duration-300 group-hover:bg-black/35 group-hover:opacity-100">
+                    <span className="grid h-16 w-16 place-items-center rounded-full bg-[#ffd018] text-black shadow-[0_18px_50px_rgba(0,0,0,0.35)] transition duration-300 group-hover:scale-100">
+                      <ExternalLink className="h-7 w-7" />
+                    </span>
+                  </span>
+                </span>
+              );
 
               return (
               <div
@@ -438,6 +412,46 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      {content.itServices?.items?.length ? (
+        <section className="it-service-section relative overflow-hidden bg-[#050505] px-5 py-16 text-white sm:px-12 sm:py-24">
+          <div className="pointer-events-none absolute left-[14%] top-8 h-12 w-12 rounded-full border border-[#ffd018] sm:h-14 sm:w-14" />
+          <div className="pointer-events-none absolute left-[18%] top-16 h-2 w-2 rounded-full bg-[#ffd018]" />
+          <div className="mx-auto max-w-[1250px]">
+            <h2 className="text-center text-[32px] font-extrabold leading-none text-[#ffd018] sm:text-[42px] md:text-[52px]">
+              {content.itServices.title.replace(/^./, (letter) => letter.toUpperCase())}
+            </h2>
+            <div className="mt-16 grid gap-x-7 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
+              {content.itServices.items.map((service, index) => (
+                <article
+                  className="it-service-card group relative isolate min-h-[310px] overflow-visible rounded-[28px] rounded-tr-none bg-[#111] px-8 pb-16 pt-12 text-center ring-1 ring-[#ffd018]/20 transition duration-300 hover:shadow-[0_24px_60px_rgba(255,208,24,0.18)] sm:px-12"
+                  key={`${service.title}-${index}`}
+                >
+                  <span className="absolute left-0 top-0 z-20 h-1 w-full bg-white/15" />
+                  <span className="absolute left-[16%] top-0 z-20 h-1 w-[42%] bg-[#ffd018] transition-all duration-300 group-hover:left-0 group-hover:w-full" />
+                  <span className="it-circuit absolute inset-0 z-0 rounded-[28px] rounded-tr-none opacity-20 transition duration-300 group-hover:opacity-35" />
+                  <div className="relative z-10">
+                    <h3 className="text-[23px] font-extrabold leading-tight text-white sm:text-[27px]">
+                      {service.title}
+                    </h3>
+                    <div className="mx-auto mt-9 h-px max-w-[330px] bg-[#ffd018]/45" />
+                    <p className="mx-auto mt-8 max-w-[340px] text-[16px] font-medium leading-[1.65] text-white/78">
+                      {service.body}
+                    </p>
+                  </div>
+                  <div className="absolute -bottom-7 left-1/2 z-20 h-28 w-32 -translate-x-1/2 overflow-hidden rounded-t-full bg-[#050505] ring-1 ring-[#ffd018]/35">
+                    <img
+                      alt={service.imageAlt ?? service.title}
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
+                      src={service.image}
+                    />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <PhotographerSlider
         eyebrow={copy.photographersSubtitle}
