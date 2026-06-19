@@ -48,9 +48,24 @@ export const defaultBlogContent: BlogContent = {
       href: "/blog/lets-create-something-exceptional",
       slug: "lets-create-something-exceptional",
       body:
-        "Tell us about your project and we will recommend the most effective visual solution for your goals.",
+        "Whether you're planning an event, promoting a property, launching a campaign, or building a stronger brand presence, we're here to help. Tell us about your project and we'll recommend the most effective visual solution for your goals. Get in touch by email, phone, WhatsApp, or Instagram.",
       image: "/uploads/site-images/conference-panel.jpg",
       imageAlt: "Creative production studio",
+    },
+    {
+      title: "Positioning Statement",
+      category: "Brand",
+      comments: "0",
+      date: "",
+      author: "Lumos Visuals",
+      excerpt:
+        "Lumos Visuals is a corporate and commercial visual production partner for photography, video, virtual tours, and creative post-production.",
+      href: "/blog/positioning-statement",
+      slug: "positioning-statement",
+      body:
+        "Lumos Visuals. Corporate & Commercial Visual Production. Photography, Video Production, 360-degree Photography, Virtual Tours, Color Grading, Fine Art Retouching, Album Design, and Magazine Design.",
+      image: "/uploads/site-images/event-lobby.jpg",
+      imageAlt: "Lumos Visuals positioning statement",
     },
   ],
 };

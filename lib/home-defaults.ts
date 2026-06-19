@@ -19,7 +19,7 @@ export const defaultHomeContent: HomeContent = {
     aboutBodyLeft:
       "Lumos Visuals is a commercial visual production studio specializing in photography, videography, immersive virtual experiences, and creative post-production.",
     aboutBodyRight:
-      "We work with brands, businesses, hotels, architects, developers, agencies, and event organizers to create visual content that communicates value, strengthens brand identity, and supports marketing objectives. From concept development and production to editing, retouching, design, and final delivery, we provide a complete visual workflow under one roof.",
+      "We work with brands, businesses, hotels, architects, developers, agencies, and event organizers to create visual content that communicates value, strengthens brand identity, and supports marketing objectives. Our approach combines technical precision, creative direction, and strategic thinking to produce content that performs across digital platforms, advertising campaigns, publications, presentations, and commercial marketing materials. From concept development and production to editing, retouching, design, and final delivery, we provide a complete visual workflow under one roof.",
     aboutCtaText: "Request a Quote",
     aboutCtaHref: "/book",
     servicesSideLabel: "Services",
@@ -41,9 +41,9 @@ export const defaultHomeContent: HomeContent = {
     blogCtaHref: "/book",
     contactTitle: "Contact",
     contactAddress:
-      "Whether you are planning an event, promoting a property, launching a campaign, or building a stronger brand presence, we are here to help.",
-    contactPhone: "Phone",
-    contactEmail: "Email",
+      "Whether you're planning an event, promoting a property, launching a campaign, or building a stronger brand presence, we're here to help. Tell us about your project and we'll recommend the most effective visual solution for your goals. Get in touch by Email, Phone, WhatsApp, or Instagram.",
+    contactPhone: "Phone / WhatsApp",
+    contactEmail: "Email / Instagram",
     contactCtaText: "Request a Quote",
     contactCtaHref: "/book",
     mapSrc:
@@ -78,7 +78,7 @@ export const defaultHomeContent: HomeContent = {
       ghost: "Events",
       sub: "Summits. trade shows. exhibitions.",
       body:
-        "Professional photography and video coverage for conferences, exhibitions, trade shows, summits, and networking events.",
+        "Professional photography and video coverage for conferences, exhibitions, trade shows, summits, and networking events. We capture keynote presentations, panel discussions, audience engagement, sponsor activations, exhibitions, and behind-the-scenes moments while maintaining a consistent and professional visual identity.",
       image: "/uploads/site-images/conference-room.jpg",
     },
     {
@@ -88,7 +88,7 @@ export const defaultHomeContent: HomeContent = {
       ghost: "Corporate",
       sub: "Launches. ceremonies. celebrations.",
       body:
-        "Visual coverage for corporate gatherings, launch events, ceremonies, and company celebrations, creating valuable marketing assets for future communication.",
+        "Visual coverage for corporate gatherings, launch events, ceremonies, and company celebrations. Our goal is to document the energy, atmosphere, and key moments that define your event while creating valuable marketing assets for future communication and promotion.",
       image: "/uploads/site-images/event-lobby.jpg",
     },
     {
@@ -98,7 +98,7 @@ export const defaultHomeContent: HomeContent = {
       ghost: "Studio",
       sub: "Portraits. products. campaigns.",
       body:
-        "Professional imagery for businesses, brands, products, and marketing campaigns, from executive portraits to branded content.",
+        "Professional imagery designed for businesses, brands, products, and marketing campaigns. From executive portraits to product photography and branded content, we create visuals that support professional communication and commercial success.",
       image: "/uploads/site-images/team-portrait.jpg",
     },
   ],
@@ -204,6 +204,12 @@ export const defaultHomeContent: HomeContent = {
       body: "Our work is designed to support marketing, communication, sales, and brand growth.",
       image:
         "/uploads/site-images/team-portrait.jpg",
+    },
+    {
+      title: "End-to-End Production",
+      body: "From concept to final delivery, every stage is managed with professionalism and attention to detail.",
+      image:
+        "/uploads/site-images/conference-room.jpg",
     },
   ],
   posts: [

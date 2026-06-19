@@ -57,7 +57,7 @@ function ServiceCard({
             {service.sub}
           </p>
           <div
-            className="mt-8 max-w-[620px] text-[14px] font-black uppercase leading-[1.8] text-white/80 [&_p]:mb-3"
+            className="mt-8 max-w-[620px] text-[14px] font-black uppercase leading-[1.8] text-white/80 [&_li]:mb-1 [&_li]:list-disc [&_p]:mb-3 [&_ul]:mt-3 [&_ul]:pl-5"
             dangerouslySetInnerHTML={{ __html: service.body ?? "" }}
           />
         </div>
@@ -112,7 +112,7 @@ export default async function ServicesPage() {
               {content.feature.sub}
             </p>
             <div
-              className="mt-8 max-w-[620px] text-[14px] font-black uppercase leading-[1.8] text-white/80 [&_p]:mb-3"
+              className="mt-8 max-w-[620px] text-[14px] font-black uppercase leading-[1.8] text-white/80 [&_li]:mb-1 [&_li]:list-disc [&_p]:mb-3 [&_ul]:mt-3 [&_ul]:pl-5"
               dangerouslySetInnerHTML={{ __html: content.feature.body ?? "" }}
             />
           </div>

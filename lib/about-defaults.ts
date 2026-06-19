@@ -14,7 +14,7 @@ export const defaultAboutContent: AboutContent = {
     title: "Commercial visual production for brands, businesses, hospitality, architecture, and events.",
     badge: "Photography - Video Production - 360-degree Virtual Tours - Creative Post-Production",
     body:
-      "Lumos Visuals is a commercial visual production studio specializing in photography, videography, immersive virtual experiences, and creative post-production. We create visual content that communicates value, strengthens brand identity, and supports marketing objectives.",
+      "Lumos Visuals is a commercial visual production studio specializing in photography, videography, immersive virtual experiences, and creative post-production. We work with brands, businesses, hotels, architects, developers, agencies, and event organizers to create visual content that communicates value, strengthens brand identity, and supports marketing objectives. Our approach combines technical precision, creative direction, and strategic thinking to produce content that performs across digital platforms, advertising campaigns, publications, presentations, and commercial marketing materials.",
   },
   story: {
     image:
@@ -56,6 +56,10 @@ export const defaultAboutContent: AboutContent = {
     {
       title: "Commercial Focus",
       body: "Our work is designed to support marketing, communication, sales, and brand growth.",
+    },
+    {
+      title: "End-to-End Production",
+      body: "From concept to final delivery, every stage is managed with professionalism and attention to detail.",
     },
   ],
   photographers: [
