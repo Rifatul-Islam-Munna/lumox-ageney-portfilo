@@ -316,81 +316,82 @@ export default function Home() {
               : service.id === "post-production"
                 ? ShoppingBag
                 : Camera;
-          const dark = service.tone === "dark";
+          const imageOnLeft = index % 2 === 0;
 
           return (
             <section
-              className={[
-                "readable-image-panel relative min-h-[640px] overflow-hidden px-5 py-16 sm:min-h-[680px] sm:px-12 sm:py-24 md:py-32",
-                dark ? "bg-[#111] text-white" : "bg-[#f9ca00] text-black",
-              ].join(" ")}
+              className="relative overflow-hidden bg-[#0b0b0b] text-white"
               id={service.id}
               key={service.id}
-              style={{
-                backgroundImage: `url(${service.image})`,
-                backgroundPosition: dark ? "left center" : "right center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
             >
+              <div className="absolute inset-x-0 top-0 z-10 h-2 bg-[#ffd018]" />
+              <div className="absolute inset-x-0 bottom-0 z-10 h-2 bg-[#ffd018]" />
               {index === 0 && (
-                <div className="absolute left-[18%] top-0 hidden h-44 items-start justify-center bg-[#ffd018] px-4 pt-7 text-black md:flex">
+                <div className="absolute left-[18%] top-2 z-20 hidden h-44 items-start justify-center bg-[#ffd018] px-4 pt-7 text-black md:flex">
                   <span className="[writing-mode:vertical-rl] text-[13px] font-extrabold uppercase tracking-[0.28em]">
                     &larr; {copy.servicesSideLabel}
                   </span>
                 </div>
               )}
 
-              <div
-                className={[
-                  "relative mx-auto max-w-[1190px] pt-10 sm:pt-20 md:pt-28",
-                  dark ? "md:ml-auto md:mr-[6%] md:w-[58%]" : "",
-                ].join(" ")}
-              >
-                <div className="max-w-[760px] bg-black/58 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.42)] ring-1 ring-white/10 backdrop-blur-[2px] sm:p-9">
-                <h2 className="relative text-[48px] font-extrabold uppercase leading-[.9] tracking-normal text-white min-[380px]:text-[56px] sm:text-[92px]">
-                  <span
-                    className={[
-                      "absolute -top-[.18em] left-0 text-[#ffd018]/20",
-                    ].join(" ")}
-                  >
-                    {service.ghost}
-                  </span>
-                  <span
-                    className={[
-                      "relative block pt-10 text-[32px] font-extrabold tracking-normal text-white drop-shadow-[0_10px_30px_rgba(0,0,0,0.75)] min-[380px]:text-[38px] sm:pt-12 sm:text-[58px]",
-                    ].join(" ")}
-                  >
-                    {service.title}
-                  </span>
-                </h2>
-                <p className="mt-4 text-[13px] font-bold uppercase tracking-[0.08em] text-[#ffd018] sm:text-[16px]">
-                  {service.sub}
-                </p>
-
-                <div className="mt-10 grid max-w-[720px] gap-5 sm:mt-12 sm:grid-cols-[74px_1fr] sm:gap-7">
-                  <Icon className="mt-1 h-12 w-12 stroke-[2.2] text-[#ffd018] sm:h-16 sm:w-16" />
+              <div className="grid min-h-[650px] lg:grid-cols-2">
+                <div
+                  className={[
+                    "relative min-h-[360px] overflow-hidden lg:min-h-[650px]",
+                    imageOnLeft ? "lg:order-1" : "lg:order-2",
+                  ].join(" ")}
+                >
+                  <img
+                    alt={service.title}
+                    className="h-full w-full object-cover grayscale transition duration-700 hover:scale-105 hover:grayscale-0"
+                    src={service.image}
+                  />
                   <div
                     className={[
-                      "text-[14px] font-semibold normal-case leading-[1.7] [&_p]:mb-3 sm:text-[16px]",
-                      "text-white/90",
+                      "absolute inset-0",
+                      imageOnLeft
+                        ? "bg-gradient-to-r from-black/18 via-black/28 to-[#0b0b0b]"
+                        : "bg-gradient-to-l from-black/18 via-black/28 to-[#0b0b0b]",
                     ].join(" ")}
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        service.body ??
-                        "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts. Separated They Live In Bookmarksgrove Right At The Coast Of The Semantics, A Large Language Ocean. A Small River Named Duden Flows By Their Place And Supplies It With The Necessary Regelialia. It Is A Paradisematic Country, In Which Roasted Parts Of Sentences.",
-                    }}
                   />
                 </div>
 
-                <a
+                <div
                   className={[
-                    "mt-8 inline-flex items-center gap-5 text-[15px] font-extrabold uppercase tracking-[0.12em] text-[#ffd018]",
+                    "relative flex items-center px-6 py-20 sm:px-12 lg:min-h-[650px]",
+                    imageOnLeft ? "lg:order-2 lg:pl-20 lg:pr-16" : "lg:order-1 lg:pl-16 lg:pr-20",
                   ].join(" ")}
-                  href={copy.serviceCtaHref}
                 >
-                  {copy.serviceCtaText} <span className="text-3xl leading-none">&larr;</span>
-                </a>
+                  <div className="max-w-[690px]">
+                    <span className="pointer-events-none absolute left-6 top-[22%] text-[72px] font-extrabold uppercase leading-none text-white/[0.07] sm:text-[110px] lg:left-10 lg:text-[132px]">
+                      {service.ghost}
+                    </span>
+                    <h2 className="relative text-[38px] font-light uppercase leading-none tracking-[0.08em] text-white sm:text-[52px]">
+                      {service.title}
+                    </h2>
+                    <p className="mt-4 text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#ffd018] sm:text-[15px]">
+                      {service.sub}
+                    </p>
+
+                    <div className="mt-11 grid gap-6 sm:grid-cols-[72px_1fr] sm:gap-7">
+                      <Icon className="h-14 w-14 stroke-[1.7] text-white sm:h-16 sm:w-16" />
+                      <div
+                        className="text-[15px] font-bold uppercase leading-[1.85] text-white/70 [&_p]:mb-3"
+                        dangerouslySetInnerHTML={{
+                          __html:
+                            service.body ??
+                            "Far Far Away, Behind The Word Mountains, Far From The Countries Vokalia And Consonantia, There Live The Blind Texts.",
+                        }}
+                      />
+                    </div>
+
+                    <a
+                      className="mt-8 inline-flex items-center gap-4 text-[15px] font-extrabold uppercase tracking-[0.18em] text-[#ffd018]"
+                      href={copy.serviceCtaHref}
+                    >
+                      {copy.serviceCtaText} <span className="text-3xl leading-none">&larr;</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </section>
